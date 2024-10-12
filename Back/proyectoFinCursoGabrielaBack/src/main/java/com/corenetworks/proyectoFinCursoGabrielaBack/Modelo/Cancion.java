@@ -1,17 +1,16 @@
 package com.corenetworks.proyectoFinCursoGabrielaBack.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Setter
+@Getter
 
 @Entity
 @Table(name="canciones")
@@ -24,16 +23,15 @@ public class Cancion  {
 
     @Column(length = 120, nullable = false)
     private String nombre;
-    @Column(nullable = false)
+    @Column
     private Date fechaCreacion;
     @Column(nullable = false)
-    private float duracion;
-    @Column(nullable = false)
-    private int ventas;
-    @Column(nullable = false)
-    private int busquedas;
-    @Column(name = "novedades",nullable = false)
-    private boolean nueva =true;
+    private int duracion;
+    @Column (nullable = false)
+    private long descargas=0;
+    @Column (nullable = false)
+    private long busquedas=0;
+
 
     @ManyToMany
     @JoinTable(
@@ -43,21 +41,21 @@ public class Cancion  {
     )
     private List<Interprete>interpretes;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="id_genero")
     private Genero genero;
 
-    public Cancion(String nombre, Date fechaCreacion, float duracion, int ventas, int busquedas, boolean nueva, List<Interprete> interpretes, Genero genero) {
+    public Cancion(String nombre, Date fechaCreacion, int duracion, int descargas, int busquedas, List<Interprete> interpretes, Genero genero) {
         this.nombre = nombre;
         this.fechaCreacion = fechaCreacion;
         this.duracion = duracion;
-        this.ventas = ventas;
+        this.descargas = descargas;
         this.busquedas = busquedas;
-        this.nueva = nueva;
         this.interpretes = interpretes;
         this.genero = genero;
     }
-    public Cancion(String nombre,float duracion){
+    public Cancion(String nombre,int duracion){
         this.nombre=nombre;
         this.duracion=duracion;
     }

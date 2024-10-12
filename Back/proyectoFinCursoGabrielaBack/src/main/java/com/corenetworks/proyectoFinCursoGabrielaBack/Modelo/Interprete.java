@@ -1,9 +1,8 @@
 package com.corenetworks.proyectoFinCursoGabrielaBack.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,7 +10,8 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Setter
+@Getter
 @Entity
 @Table(name="interpretes")
 
@@ -20,14 +20,14 @@ public class Interprete {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idInterprete;
 
-    @Column(length = 120)
+    @Column(nullable = false, length = 120,unique = true)
     private String nombre;
-    @Column(nullable = false)
+    @Column
     private Date fechaCreacion;
-    @Column(length = 60, nullable = false)
+    @Column(length = 60)
     private String paisOrigen;
 
-
+    @JsonIgnore
     @ManyToMany(mappedBy = "interpretes",
             cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
     List<Cancion> canciones=new ArrayList<>();

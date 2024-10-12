@@ -1,7 +1,9 @@
 package com.corenetworks.proyectoFinCursoGabrielaBack.Servicio;
 
 import com.corenetworks.proyectoFinCursoGabrielaBack.Modelo.Cancion;
+import org.springframework.stereotype.Service;
 
-public interface IServicio_cancion extends IServicio<Cancion,Integer> {
+@Service
+public interface IServicioCancion extends IServicio<Cancion,Integer> {
 
 }

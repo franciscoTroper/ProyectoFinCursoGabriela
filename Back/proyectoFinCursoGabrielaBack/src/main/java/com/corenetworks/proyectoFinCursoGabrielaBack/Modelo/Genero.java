@@ -1,9 +1,7 @@
 package com.corenetworks.proyectoFinCursoGabrielaBack.Modelo;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,7 +9,9 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Setter
+@Getter
+
 @Entity
 @Table(name="generos")
 

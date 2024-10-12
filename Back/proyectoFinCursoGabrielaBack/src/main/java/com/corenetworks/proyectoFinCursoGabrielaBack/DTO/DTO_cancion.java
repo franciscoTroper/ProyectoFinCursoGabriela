@@ -7,11 +7,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 
-public class Dto_cancion {
+public class DTO_cancion {
 
     @NotNull
     @Min(0)
@@ -19,4 +21,6 @@ public class Dto_cancion {
     private String nombreCancion;
     @NotNull
     private float duracion;
+    private Date fechaCreacion;
+
 }

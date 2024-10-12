@@ -1,7 +1,9 @@
 package com.corenetworks.proyectoFinCursoGabrielaBack.Servicio;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+@Service
 public interface IServicio<T,ID> {
     T registrar(T t) throws Exception;
 
