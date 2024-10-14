@@ -3,7 +3,6 @@ import { CancionesComponent } from './canciones/canciones.component';
 import { InterpretesComponent } from './interpretes/interpretes.component';
 import { GenerosComponent } from './generos/generos.component';
 import { CabeceroComponent } from './cabecero/cabecero.component';
-import { DestaquesComponent } from './destaques/destaques.component';
 import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
 import { PaginaErrorComponent } from './pagina-error/pagina-error.component';
 
