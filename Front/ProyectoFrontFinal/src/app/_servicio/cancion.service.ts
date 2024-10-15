@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { entorno } from '../_entorno/entorno';
 import { Observable } from 'rxjs';
 import { Cancion } from '../_modelo/cancion';
+import { Genero } from '../_modelo/genero';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,8 @@ export class CancionService {
   // hace más legible...
   private obtener(url:string):Observable<Cancion[]> {
     return this.http.get<Cancion[]>(this.url + url);
+  }
+  ObtenerCancionesDesdeGenero(nombreGenero:string):Observable<Genero[]>{
+    return this.http.get<Genero[]>(this.url+"/genero/nombre/"+ nombreGenero);
   }
 }

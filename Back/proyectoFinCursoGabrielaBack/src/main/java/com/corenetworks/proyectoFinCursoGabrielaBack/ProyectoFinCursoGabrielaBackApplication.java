@@ -37,17 +37,17 @@ public class ProyectoFinCursoGabrielaBackApplication implements CommandLineRunne
 
 	@Override
 	public void run(String... args) throws Exception {
-//		Genero rock=new Genero(0,"rock");
-//		servicioGenero.registrar(rock);
+		Genero rock=new Genero(0,"rock");
+		servicioGenero.registrar(rock);
+
+		Genero folk=new Genero(0,"folk");
+		servicioGenero.registrar(folk);
 //
-//		Genero folk=new Genero(0,"folk");
-//		servicioGenero.registrar(folk);
-////
-//		Interprete oasis = new Interprete(0,"Oasis",new Date(1970,5,25),"Inglaterra");
-//		servicioInterprete.registrar(oasis);
-////
-//		List<Interprete> interpretes = new ArrayList<>();
-//		interpretes.add(oasis);
+		Interprete oasis = new Interprete(0,"Oasis",new Date(1970,5,25),"Inglaterra");
+		servicioInterprete.registrar(oasis);
+//
+		List<Interprete> interpretes = new ArrayList<>();
+		interpretes.add(oasis);
 
 //		Cancion cancion=new Cancion("Wonderfull"
 //				, new LocalDate(1980,4,17)
