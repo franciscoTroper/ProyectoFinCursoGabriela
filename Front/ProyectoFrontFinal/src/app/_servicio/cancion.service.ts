@@ -24,12 +24,13 @@ export class CancionService {
   ObtenerCancionesMasDescargadas():Observable<Cancion[]>{
     return this.obtener("/masdescargadas");
   }
+  ObtenerCancionesDesdeGenero(nombreGenero:string):Observable<Cancion[]>{
+    return this.http.get<Cancion[]>(this.url+"/genero/nombre/"+ nombreGenero);
+  }
 
   // hace más legible...
   private obtener(url:string):Observable<Cancion[]> {
     return this.http.get<Cancion[]>(this.url + url);
   }
-  ObtenerCancionesDesdeGenero(nombreGenero:string):Observable<Genero[]>{
-    return this.http.get<Genero[]>(this.url+"/genero/nombre/"+ nombreGenero);
-  }
+ 
 }

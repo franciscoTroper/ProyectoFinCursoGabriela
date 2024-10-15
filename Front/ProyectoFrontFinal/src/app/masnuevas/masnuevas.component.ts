@@ -5,7 +5,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-mas-nuevas',
+  selector: 'app-masnuevas',
   standalone: true,
   imports: [RouterOutlet,RouterModule,NgIf,NgFor],
   templateUrl: './masnuevas.component.html',

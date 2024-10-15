@@ -18,9 +18,9 @@ export class CancionesComponent  {
   canciones:Cancion[]=[];
   constructor(private cancionService:CancionService){}
   
-
   ngOnInit(): void {
     this.cancionService.ObtenerCanciones().subscribe(datastream => {this.canciones = datastream;})
+    
   }
 
 }

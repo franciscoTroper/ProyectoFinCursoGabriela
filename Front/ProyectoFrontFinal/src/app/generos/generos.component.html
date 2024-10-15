@@ -1,15 +1,19 @@
-<p>generos works!</p>
-<p>generos Component</p>
-<div *ngIf="canciones.length > 0">
-    <ul>
-      <li *ngFor="let cancion of canciones">
-        <strong>Nombre:</strong> {{ cancion.nombre }}  <br>
-        <strong>Duración:</strong> {{ cancion.duracion }}  <br>
-        <strong>Fecha de Creación:</strong> {{ cancion.fechaCreacion }}  <br>
-        <hr>
-      </li>
-    </ul>
-  </div>
-  <div *ngIf="canciones.length === 0">
-    No hay canciones nuevas disponibles.
-  </div>
+<h1>Canciones desde genero</h1>
+<table>
+    <caption>Lista de canciones</caption>
+    <tr>
+        <th>id</th>
+        <th>Nombre de cancion</th>
+        <th>Duracion</th>
+        <th>Fecha de creacion</th>
+    </tr>
+
+    @for(elemento of canciones; track elemento.idCancion) {
+        <tr>
+            <td>{{elemento.idCancion}}</td>
+            <td>{{elemento.nombre}}</td>
+            <td>{{elemento.duracion}}</td>
+            <td>{{elemento.fechaCreacion}}</td>
+        </tr>
+    }
+</table>
