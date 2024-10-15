@@ -1,5 +1,10 @@
 export interface Cancion {
-    nombreCancion: string;
-    duracion:      number;
+    idCancion:     number;
+    nombre:        string;
     fechaCreacion: Date;
+    duracion:      number;
+    busquedas:     number;
+    descargas:     number;
+    genero:        string;
 }
+

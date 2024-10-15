@@ -5,30 +5,35 @@ import { GenerosComponent } from './generos/generos.component';
 import { CabeceroComponent } from './cabecero/cabecero.component';
 import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
 import { PaginaErrorComponent } from './pagina-error/pagina-error.component';
-import { MasNuevasComponent } from './mas-nuevas/mas-nuevas.component';
+import { MasNuevasComponent } from './masnuevas/masnuevas.component';
+import { InicioComponent } from './inicio/inicio.component';
+
 
 export const routes: Routes = [
 
     {
-        "path": '', component: CancionesComponent
+        "path": 'canciones', component: CancionesComponent
     },
     {
-        "path": '', component: InterpretesComponent
+        "path": 'inicio', component: InicioComponent
     },
     {
-        "path": '', component: GenerosComponent
+        "path": 'interpretes', component: InterpretesComponent
     },
     {
-        "path": '', component: CabeceroComponent
+        "path": 'generos', component: GenerosComponent
     },
     {
-        "path": '', component: PiePaginaComponent
+        "path": 'cabecero', component: CabeceroComponent
     },
     {
-        "path":'', component:MasNuevasComponent
+        "path": 'piePagina', component: PiePaginaComponent
+    },
+    {
+        "path":'masnuevas', component:MasNuevasComponent
     }, 
     {
-        "path":"",redirectTo: "canciones", pathMatch: "full"
+        "path":"",redirectTo: "inicio", pathMatch: "full"
     },
     {
         "path":"**", "component": PaginaErrorComponent

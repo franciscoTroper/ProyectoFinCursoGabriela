@@ -13,6 +13,6 @@ export class CancionService {
   private url:string=`${entorno.HOST}/canciones`
 
   ObtenerCancionesMasNuevas():Observable<Cancion[]>{
-    return this.http.get<Cancion[]>(this.url+"/masnuevas/");
+    return this.http.get<Cancion[]>(this.url+"/masnuevas");
   }
 }

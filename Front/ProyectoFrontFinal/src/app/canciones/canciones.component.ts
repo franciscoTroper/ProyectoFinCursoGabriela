@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule,Router } from '@angular/router';
 
 @Component({
   selector: 'app-canciones',
@@ -8,6 +8,9 @@ import { RouterModule } from '@angular/router';
   templateUrl: './canciones.component.html',
   styleUrl: './canciones.component.css'
 })
-export class CancionesComponent {
+export class CancionesComponent  {
+  
+
+  
 
 }

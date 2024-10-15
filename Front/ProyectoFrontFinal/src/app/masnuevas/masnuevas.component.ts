@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Cancion } from '../_modelo/cancion';
 import { CancionService } from '../_servicio/cancion.service';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-mas-nuevas',
   standalone: true,
-  imports: [],
-  templateUrl: './mas-nuevas.component.html',
-  styleUrl: './mas-nuevas.component.css'
+  imports: [RouterOutlet,RouterModule,NgIf,NgFor],
+  templateUrl: './masnuevas.component.html',
+  styleUrl: './masnuevas.component.css'
 })
 export class MasNuevasComponent implements OnInit
 {

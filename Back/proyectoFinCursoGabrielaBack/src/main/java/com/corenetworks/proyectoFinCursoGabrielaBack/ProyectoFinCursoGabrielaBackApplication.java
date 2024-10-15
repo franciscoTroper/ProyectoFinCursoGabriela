@@ -37,17 +37,17 @@ public class ProyectoFinCursoGabrielaBackApplication implements CommandLineRunne
 
 	@Override
 	public void run(String... args) throws Exception {
-		Genero rock=new Genero(0,"rock");
-		servicioGenero.registrar(rock);
-
-		Genero folk=new Genero(0,"folk");
-		servicioGenero.registrar(folk);
+//		Genero rock=new Genero(0,"rock");
+//		servicioGenero.registrar(rock);
 //
-		Interprete oasis = new Interprete(0,"Oasis",new Date(1970,5,25),"Inglaterra");
-		servicioInterprete.registrar(oasis);
-//
-		List<Interprete> interpretes = new ArrayList<>();
-		interpretes.add(oasis);
+//		Genero folk=new Genero(0,"folk");
+//		servicioGenero.registrar(folk);
+////
+//		Interprete oasis = new Interprete(0,"Oasis",new Date(1970,5,25),"Inglaterra");
+//		servicioInterprete.registrar(oasis);
+////
+//		List<Interprete> interpretes = new ArrayList<>();
+//		interpretes.add(oasis);
 
 //		Cancion cancion=new Cancion("Wonderfull"
 //				, new LocalDate(1980,4,17)
@@ -59,24 +59,24 @@ public class ProyectoFinCursoGabrielaBackApplication implements CommandLineRunne
 //				,LocalTime.of(0,4,56)
 //				,0,0,0,true,interpretes,rock);
 
-		Cancion cancion=new Cancion("Wonderfull"
-				, LocalDate.of( 1980 , 4 , 17 )
-				,120
-				,interpretes,rock);
-
-		Cancion cancion2=new Cancion("Wonderfull2"
-				, LocalDate.of( 1985 , 7 , 25 )
-				,166
-				,interpretes,rock);
-
-		Cancion cancion3=new Cancion("Petete"
-				, LocalDate.of( 1985 , 7 , 25 )
-				,166
-				,interpretes,folk);
-
-		servicioCancion.registrar(cancion);
-		servicioCancion.registrar(cancion2);
-		servicioCancion.registrar(cancion3);
+//		Cancion cancion=new Cancion("Wonderfull"
+//				, LocalDate.of( 1980 , 4 , 17 )
+//				,120
+//				,interpretes,rock);
+//
+//		Cancion cancion2=new Cancion("Wonderfull2"
+//				, LocalDate.of( 1985 , 7 , 25 )
+//				,166
+//				,interpretes,rock);
+//
+//		Cancion cancion3=new Cancion("Petete"
+//				, LocalDate.of( 1985 , 7 , 25 )
+//				,166
+//				,interpretes,folk);
+//
+//		servicioCancion.registrar(cancion);
+//		servicioCancion.registrar(cancion2);
+//		servicioCancion.registrar(cancion3);
 //
 //		System.out.println("LISTADO DE CANCIONES ANTES DEL BORRADO:");
 //		servicioCancion.listar().forEach(System.out::println);
