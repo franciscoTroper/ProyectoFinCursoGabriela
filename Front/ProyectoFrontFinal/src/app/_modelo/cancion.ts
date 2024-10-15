@@ -1,8 +1,8 @@
 export interface Cancion {
     idCancion:     number;
     nombre:        string;
-    fechaCreacion: Date;
     duracion:      number;
+    fechaCreacion: Date;
     busquedas:     number;
     descargas:     number;
     genero:        string;
