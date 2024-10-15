@@ -10,7 +10,7 @@ import { Cancion } from '../_modelo/cancion';
 export class InterpreteService {
 
   constructor(private http:HttpClient) { }
-  private url:string=`${entorno.HOST}/interprete`
+  private url:string=`${entorno.HOST}/interpretes`
 
   ObtenerCanciones(nombreInterprete:string):Observable<Cancion[]>{
     return this.http.get<Cancion[]>(this.url+"/canciones/"+nombreInterprete);
