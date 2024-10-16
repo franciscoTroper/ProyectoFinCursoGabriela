@@ -2,21 +2,41 @@
     <div class="container">
       <div class="logo">
         <a href="/">Tienda de Discos</a>
-      </div>
+        <p>Aquí encontrarás una gran variedad de canciones para todos los gustos.</p>      
+    </div>
       <nav>
         <ul>
           <li><a href="/">Inicio</a></li>
-          <li><a href="/productos">Productos</a></li>
           <li><a href="/contacto">Contacto</a></li>
           <li class="search-bar">
-            <input type="text" placeholder="Buscar...">
             <button><i class="fas fa-search"></i></button>
+            <input type="text" placeholder="Buscar...">
+            <div className="radio">
+            <div className="radio">
+              <label>
+                <input type="radio" name="optcion" value="option1" checked={true} />
+                Canciones
+              </label>
+              <div className="radio">
+                <label>
+                  <input type="radio" name="optcion" value="option2" />
+                  Interpretes
+                </label>
+              </div>
+              <div className="radio">
+                <label>
+                  <input type="radio" name="optcion" value="option3" />
+                  Generos
+                </label>
+              </div>
+            </div>
+            </div>
           </li>
         </ul>
       </nav>
-      <div class="cart">
+      <!--div class="cart">
         <a href="/cart"><i class="fas fa-shopping-cart"></i> (0)</a>
-      </div>
+      </div>-->
     </div>
 </header>
-  
+
