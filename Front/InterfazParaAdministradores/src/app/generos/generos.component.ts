@@ -1,18 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Genero } from '../_modelo/genero';
 import { GeneroService } from '../_servicio/genero.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-generos',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './generos.component.html',
   styleUrl: './generos.component.css'
 })
 export class GenerosComponent {
   genero: Genero = {
-    idGenero=0,
-    tipoGenero='';
+    idGenero:0,
+    tipoGenero:''
   }
 
   constructor(private servicioGenero:GeneroService){}

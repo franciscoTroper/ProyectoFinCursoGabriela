@@ -17,19 +17,19 @@
     
         <div>
             <label class="margenLaterales" for="" >idInterprete</label>
-            <input type="text" value="0" [disabled]="isdisableidInterprete">
+            <input type="text" value="0" [(ngModel)]="this.interprete.idInterprete" [disabled]="isdisableidInterprete">
         </div>
         <div>
             <label class="margenLaterales" for="">Nombre</label>
-            <input type="text" [disabled]="isdisablenombre">
+            <input type="text" [(ngModel)]="interprete.nombre" [disabled]="isdisablenombre">
         </div>
         <div>
             <label class="margenLaterales" for="">fechaCreacion</label>
-            <input type="date"[disabled]="isdisablefechaCreacion">
+            <input type="date" [(ngModel)]="interprete.fechaCreacion" [disabled]="isdisablefechaCreacion">
         </div>
         <div>
             <label class="margenLaterales" for="">paisOrigen</label>
-            <input type="number"[disabled]="isdisablepais">
+            <input type="text" [(ngModel)]="interprete.paisOrigen" [disabled]="isdisablepais">
         </div>
         <div style="padding-left: 160px; padding-top: 20px;">
             <button (click)="enviarInterPrete()">Enviar</button>
