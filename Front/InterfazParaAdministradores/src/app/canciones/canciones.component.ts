@@ -14,7 +14,7 @@ import { Genero } from '../_modelo/genero';
 })
 export class CancionesComponent {
   
-  cancion: Cancion = {
+    cancion: Cancion = {
     idCancion: 0,
     nombre: '',
     fechaCreacion: new Date(),

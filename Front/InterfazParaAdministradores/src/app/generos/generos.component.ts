@@ -10,7 +10,10 @@ import { GeneroService } from '../_servicio/genero.service';
   styleUrl: './generos.component.css'
 })
 export class GenerosComponent {
-  genero: Genero = new Genero();
+  genero: Genero = {
+    idGenero=0,
+    tipoGenero='';
+  }
 
   constructor(private servicioGenero:GeneroService){}
 

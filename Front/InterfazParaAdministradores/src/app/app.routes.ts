@@ -7,7 +7,7 @@ import { InterpretesComponent } from './interpretes/interpretes.component';
 
 export const routes: Routes = [
 
-    {"path":"Inicio",component:InicioComponent},
+    
     {"path":"canciones",component:CancionesComponent},
     {"path":"generos",component:GenerosComponent},
     {"path":"interpretes",component:InterpretesComponent},
