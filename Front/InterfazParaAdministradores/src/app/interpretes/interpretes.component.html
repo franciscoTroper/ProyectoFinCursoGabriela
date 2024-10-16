@@ -1,0 +1,40 @@
+<div class="contenedor">
+    
+    <div class="AltasBajasModificaciones">
+        <div>
+          <input (click)="clickRadioAlta()" class="radioaltas" type="radio" name="consultas" checked> Altas
+        </div>
+       <div>
+        <input (click)="clickRadioBajas()" class="radiobajas" type="radio" name="consultas"> Bajas
+       </div> 
+       <div>
+        <input (click)="clickRadioModificiar()" class="radiomodificar" type="radio" name="consultas"> Modificar
+       </div>
+    </div>
+    
+    <div class="RellenandoDatos">
+        <h3 style=" padding-left: 40%;">INTERPRETE</h3>
+    
+        <div>
+            <label class="margenLaterales" for="" >idInterprete</label>
+            <input type="text" value="0" [disabled]="isdisableidInterprete">
+        </div>
+        <div>
+            <label class="margenLaterales" for="">Nombre</label>
+            <input type="text" [disabled]="isdisablenombre">
+        </div>
+        <div>
+            <label class="margenLaterales" for="">fechaCreacion</label>
+            <input type="date"[disabled]="isdisablefechaCreacion">
+        </div>
+        <div>
+            <label class="margenLaterales" for="">paisOrigen</label>
+            <input type="number"[disabled]="isdisablepais">
+        </div>
+        <div style="padding-left: 160px; padding-top: 20px;">
+            <button (click)="enviarInterPrete()">Enviar</button>
+        </div>
+        
+    </div>
+</div>
+

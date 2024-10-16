@@ -21,7 +21,8 @@ public class Genero {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idGenero;
 
-    @Column(length = 60, nullable = false)
+//    @Column(length = 60, nullable = false, unique = true)
+    @Column(length = 60, nullable = false, unique = true)
     private String tipoGenero;
 
 
@@ -33,5 +34,13 @@ public class Genero {
     public Genero(int idGenero, String tipoGenero) {
         this.idGenero=idGenero;
         this.tipoGenero = tipoGenero;
+    }
+
+    @Override
+    public String toString() {
+        return "Genero{" +
+                "idGenero=" + idGenero +
+                ", tipoGenero='" + tipoGenero + '\'' +
+                '}';
     }
 }
