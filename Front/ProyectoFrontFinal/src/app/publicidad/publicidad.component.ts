@@ -12,11 +12,11 @@ import { RouterModule } from '@angular/router';
 
 export class PublicidadComponent {
   images: string[] = [
-    '../../assets/_publicidades/concierto_orquesta.jpg',
     '../../assets/_publicidades/concierto_pop.png',
     '../../assets/_publicidades/concierto_rock.webp',
     '../../assets/_publicidades/concierto_tour.jpg',
-    '../../assets/_publicidades/concierto_wizink.png'
+    '../../assets/_publicidades/concierto_wizink.png',
+    '../../assets/_publicidades/concierto_orquesta.jpg'
   ];
   currentSlide = 0;
 

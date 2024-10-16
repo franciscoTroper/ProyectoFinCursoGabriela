@@ -59,3 +59,10 @@ nav a {
 .cart a i {
   margin-right: 5px;
 }
+.radio-group {
+  display:inline ;
+  gap: 10px; /* Espacio entre los botones */
+}
+.radio-group label {
+  margin: 0;
+}
