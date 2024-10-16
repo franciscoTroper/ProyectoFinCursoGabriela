@@ -1,8 +1,9 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CancionService } from '../_servicio/cancion.service';
 import { Cancion } from '../_modelo/cancion';
+import { ComunicacionService } from '../_servicio/comunicacion.service';
 
 
 @Component({
@@ -14,9 +15,17 @@ import { Cancion } from '../_modelo/cancion';
 })
 export class GenerosComponent implements OnInit{
   canciones:Cancion[]=[];
-  constructor(private cancionservicio:CancionService){}
+  @Input() nombre:string='';
+  constructor(private cancionservicio:CancionService, private comunicacion:ComunicacionService){}
+
   ngOnInit(): void {
-    this.cancionservicio.ObtenerCancionesDesdeGenero("rock").subscribe(datastream => {this.canciones=datastream})
+    this.comunicacion.recargandoPagina$.subscribe(() => {
+      this.reobtenerCanciones();
+    });
+    this.reobtenerCanciones();
+  }
+  reobtenerCanciones(){
+    this.cancionservicio.ObtenerCancionesDesdeGenero(this.nombre).subscribe(datastream => {this.canciones=datastream})
   }
   
 }

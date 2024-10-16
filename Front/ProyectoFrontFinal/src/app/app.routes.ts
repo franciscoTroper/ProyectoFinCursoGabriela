@@ -7,8 +7,8 @@ import { PublicidadComponent } from './publicidad/publicidad.component';
 import { CancionesComponent } from './canciones/canciones.component';
 import { InterpretesComponent } from './interpretes/interpretes.component';
 import { GenerosComponent } from './generos/generos.component';
-import { PaginaErrorComponent } from './pagina-error/pagina-error.component';
 import { MasNuevasComponent } from './masnuevas/masnuevas.component';
+import { CancionUnicaComponent } from './cancion-unica/cancion-unica.component';
 
 
 
@@ -18,6 +18,7 @@ export const routes: Routes = [
     {
         "path": 'inicio', component: InicioComponent
     },
+    
     {
         "path": 'cabecero', component: CabeceroComponent
     },
@@ -31,19 +32,27 @@ export const routes: Routes = [
         "path": 'canciones', component: CancionesComponent
     },
     {
-        "path": 'interpretes', component: InterpretesComponent
+        "path": 'interpretes/:nombre', component: InterpretesComponent
     },
     {
-        "path": 'generos', component: GenerosComponent
+        "path": 'generos/:nombre', component: GenerosComponent
+    },
+    {
+        "path": "cancionUnica/:nombreg", component:CancionUnicaComponent
     },
     {
         "path":'masnuevas', component:MasNuevasComponent
-    }, 
+    },
     {
-        "path":"",redirectTo: "canciones", pathMatch: "full"
+        "path": 'piePagina', component: PiePaginaComponent 
+    },
+    {
+        "path":"",redirectTo: "inicio", pathMatch: "full"
     },
     {
         "path":"**", "component": PaginaErrorComponent
+    }
+]
 
     
 
@@ -51,4 +60,4 @@ export const routes: Routes = [
 
 
 
-];
+

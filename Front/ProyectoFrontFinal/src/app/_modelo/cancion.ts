@@ -1,3 +1,5 @@
+import { Genero } from "./genero";
+
 export interface Cancion {
     idCancion:     number;
     nombre:        string;
@@ -5,6 +7,6 @@ export interface Cancion {
     fechaCreacion: Date;
     busquedas:     number;
     descargas:     number;
-    genero:        string;
+    genero:        Genero;
 }
 

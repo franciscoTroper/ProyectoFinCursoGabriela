@@ -28,9 +28,11 @@ export class CancionService {
     return this.http.get<Cancion[]>(this.url+"/genero/nombre/"+ nombreGenero);
   }
 
+  ObtenerUnaCancion(nombreCancion:string):Observable<Cancion>{
+    return this.http.get<Cancion>(`${this.url}/nombre/${nombreCancion}`);
+  }
   // hace más legible...
   private obtener(url:string):Observable<Cancion[]> {
     return this.http.get<Cancion[]>(this.url + url);
   }
- 
 }

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import { InterpreteService } from '../_servicio/interprete.service';
 import { Cancion } from '../_modelo/cancion';
 import { NgFor, NgIf } from '@angular/common';
+import { ComunicacionService } from '../_servicio/comunicacion.service';
 
 @Component({
   selector: 'app-interpretes',
@@ -13,10 +14,18 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class InterpretesComponent implements OnInit {
   canciones:Cancion[]=[];
-  constructor(private servicioInterprete:InterpreteService){}
+  @Input() nombre:string='';
+  constructor(private servicioInterprete:InterpreteService,private comunicacion:ComunicacionService){}
   ngOnInit(): void {
-    this.servicioInterprete.ObtenerCanciones("Oasis").subscribe(data => {this.canciones = data;})
+    this.comunicacion.recargandoPagina$.subscribe(() => {
+      this.reobtenerLasCanciones();
+    });
+    
   }
+  reobtenerLasCanciones(){
+    this.servicioInterprete.ObtenerCanciones(this.nombre).subscribe(data => {this.canciones = data;})
+  }
+
 
 
 
