@@ -25,7 +25,8 @@ export class InterpretesComponent implements OnInit {
     
   }
   reobtenerLasCanciones(){
-    this.servicioInterprete.ObtenerCanciones(this.nombre).subscribe(data => {this.canciones = data;})
+    setTimeout(()=>{this.servicioInterprete.ObtenerCanciones(this.nombre).subscribe(data => {this.canciones = data;})},100)
+    
   }
 
 

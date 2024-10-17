@@ -23,10 +23,8 @@ export class GenerosComponent implements OnInit{
     this.comunicacion.recargandoPagina$.subscribe(() => {
       this.reobtenerCanciones();
     });
-    
   }
   reobtenerCanciones(){
-    this.cancionservicio.ObtenerCancionesDesdeGenero(this.nombre).subscribe(datastream => {this.canciones=datastream})
+    setTimeout(()=>{this.cancionservicio.ObtenerCancionesDesdeGenero(this.nombre).subscribe(datastream => {this.canciones=datastream});},100)
   }
-  
 }

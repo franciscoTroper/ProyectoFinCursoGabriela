@@ -1,7 +1,8 @@
-import { Component, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { ComunicacionService } from '../_servicio/comunicacion.service';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-cabecero',
@@ -10,9 +11,11 @@ import { ComunicacionService } from '../_servicio/comunicacion.service';
   templateUrl: './cabecero.component.html',
   styleUrl: './cabecero.component.css'
 })
-export class CabeceroComponent {
+export class CabeceroComponent{
   searchQuery: string = '';
   constructor(private ruter:Router,private communicationService: ComunicacionService){}
+  
+  
   
   onSearch() {
     console.log('Buscando:', this.searchQuery);
@@ -21,51 +24,40 @@ export class CabeceroComponent {
 
   textobusqueda:string="";
   boolCancion:boolean=true;
-  boolInterprete:boolean=false;
-  boolGenero:boolean=false;
+  boolInterprete:boolean=false
+  boolGenero:boolean=false
   
   clickBusqueda(){
-    alert(this.textobusqueda )
+    
     if(this.boolCancion){
-  
       this.ruter.navigate(['/cancionUnica',this.textobusqueda]);
       this.communicationService.triggerFunction();
-   
-    }
-    else if(this.boolInterprete){
       
+    }
+    else if(this.boolInterprete){   
       this.ruter.navigate(['/interpretes',this.textobusqueda]);
       this.communicationService.triggerFunction();
-      
+       
     }
     else if(this.boolGenero){
-      
       this.ruter.navigate(['/generos',this.textobusqueda]);
       this.communicationService.triggerFunction();
-     
-    }
-    
+       
+    }  
 }
 clickCancion(){
   this.boolCancion=true;
   this.boolInterprete=false;
-  this.boolGenero=false;
-  
-
+  this.boolGenero=false; 
 }
 clickInterprete(){
   this.boolCancion=false;
   this.boolInterprete=true;
   this.boolGenero=false;
-  
-
 }
 clickGenero(){
   this.boolCancion=false;
   this.boolInterprete=false;
   this.boolGenero=true;
-  
-
 }
-
 }

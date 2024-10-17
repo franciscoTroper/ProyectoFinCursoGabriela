@@ -1,20 +1,21 @@
-<h1>Cancion</h1>
-<table>
-    <caption>Lista de canciones</caption>
-    <tr>
-        <th>id</th>
-        <th>Nombre de cancion</th>
-        <th>Duracion</th>
-        <th>Fecha de creacion</th>
-    </tr>
+<h1>{{nombre}}</h1>
 
-    @for(elemento of cancion; track elemento.idCancion) {
-        <tr>
-            <td>{{elemento.idCancion}}</td>
-            <td>{{elemento.nombre}}</td>
-            <td>{{elemento.duracion}}</td>
-            <td>{{elemento.fechaCreacion}}</td>
-        </tr>
-    }
-</table>
+  <table>
+    <caption></caption>
+    <tr>
+      <th>id</th>
+      <th>Nombre de cancion</th>
+      <th>Duracion</th>
+      <th>Fecha de creacion</th>
+    </tr>
+    <tr *ngFor="let elemento of cancion; TrackBy:trackByFn">
+      <td>{{elemento.idCancion}}</td>
+      <td>{{elemento.nombre}}</td>
+      <td>{{elemento.duracion}}</td>
+      <td>{{elemento.fechaCreacion}}</td>
+    </tr>
+  </table>
+  <br>
+  
+
 
