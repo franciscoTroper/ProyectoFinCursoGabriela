@@ -1,5 +1,5 @@
 header {
-  background: linear-gradient(to right, #59ccb9, #0dcf85);
+  background: linear-gradient(to right, #5dcc59, #0dcf85);
   color: #fff;
   padding: 10px 0;
 }
@@ -36,15 +36,15 @@ nav a {
 .search-bar input {
   padding: 5px;
   border: none;
-  border-radius: 3px;
-  margin-bottom: 5px; /* Añade margen inferior */
+  border-radius: 30px;
+  margin-bottom: 5px; /* Añade margen inferior, genera la distancia de los botones que estan abajo  */ 
 }
 .search-bar button {
   background-color: #fff;
   border: none;
   cursor: pointer;
   padding: 5px;
-  margin-left: 5px;
+  margin-left: 205px;
 }
 .search-bar button i {
   color: #333;
