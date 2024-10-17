@@ -1,0 +1,19 @@
+<h1>Canciones más descargadas</h1>
+<table>
+    <caption>Lista de canciones</caption>
+    <tr>
+        <th>id</th>
+        <th>Nombre de cancion</th>
+        <th>Duracion</th>
+        <th>Fecha de creacion</th>
+    </tr>
+
+    @for(elemento of canciones; track elemento.idCancion) {
+        <tr>
+            <td>{{elemento.idCancion}}</td>
+            <td>{{elemento.nombre}}</td>
+            <td>{{elemento.duracion}}</td>
+            <td>{{elemento.fechaCreacion}}</td>
+        </tr>
+    }
+</table>

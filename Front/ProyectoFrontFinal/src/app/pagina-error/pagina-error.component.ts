@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagina-error',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './pagina-error.component.css'
 })
 export class PaginaErrorComponent {
-
+constructor(private ruter:Router){}
+  volverInicio(){
+    this.ruter.navigate(['inicio']);  // Redirección al inicio del sitio
+  }
 }

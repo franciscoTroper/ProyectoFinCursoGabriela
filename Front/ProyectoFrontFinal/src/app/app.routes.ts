@@ -4,29 +4,60 @@ import { PiePaginaComponent } from './pie-pagina/pie-pagina.component';
 import { PaginaErrorComponent } from './pagina-error/pagina-error.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PublicidadComponent } from './publicidad/publicidad.component';
+import { CancionesComponent } from './canciones/canciones.component';
+import { InterpretesComponent } from './interpretes/interpretes.component';
+import { GenerosComponent } from './generos/generos.component';
+import { MasNuevasComponent } from './masnuevas/masnuevas.component';
+import { CancionUnicaComponent } from './cancion-unica/cancion-unica.component';
+
+
+
 
 export const routes: Routes = [
 
     {
-        "path": '', component: InicioComponent
+        "path": 'inicio', component: InicioComponent
+    },
+    
+    {
+        "path": 'cabecero', component: CabeceroComponent
     },
     {
-        "path": '', component: CabeceroComponent
-    },
-    {
-        "path": '', component: PublicidadComponent
+        "path": 'publicidad', component: PublicidadComponent
     },    
     {
-        "path": '', component: PiePaginaComponent
+        "path": 'piepagina', component: PiePaginaComponent
     },
     {
-        "path":"",redirectTo: "canciones", pathMatch: "full"
+        "path": 'canciones', component: CancionesComponent
+    },
+    {
+        "path": 'interpretes/:nombre', component: InterpretesComponent
+    },
+    {
+        "path": 'generos/:nombre', component: GenerosComponent
+    },
+    {
+        "path": "cancionUnica/:nombreg", component:CancionUnicaComponent
+    },
+    {
+        "path":'masnuevas', component:MasNuevasComponent
+    },
+    {
+        "path": 'piePagina', component: PiePaginaComponent 
+    },
+    {
+        "path":"",redirectTo: "inicio", pathMatch: "full"
     },
     {
         "path":"**", "component": PaginaErrorComponent
-    }  
+    }
+]
+
+    
 
 
 
 
-];
+
+

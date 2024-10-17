@@ -1,10 +1,13 @@
 package com.corenetworks.proyectoFinCursoGabrielaBack.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
@@ -21,18 +24,18 @@ public class Cancion  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCancion;
 
-    @Column(length = 120, nullable = false)
+    @Column(length = 120, nullable = false, unique = true)
     private String nombre;
-    @Column
-    private Date fechaCreacion;
     @Column(nullable = false)
-    private float duracion;
-    @Column
-    private long descargas=0;
-    @Column
-    private long busquedas=0;
+    private LocalDate fechaCreacion;
+    @Column(nullable = false)
+    private int duracion;
+    @Column(nullable = false)
+    private int busquedas;
+    @Column(nullable = false)
+    private int descargas;
 
-
+//    @ManyToMany(fetch = FetchType.EAGER)
     @ManyToMany
     @JoinTable(
             name = "cancion_interprete",
@@ -41,22 +44,33 @@ public class Cancion  {
     )
     private List<Interprete>interpretes;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="id_genero")
     private Genero genero;
 
-    public Cancion(String nombre, Date fechaCreacion, float duracion, int ventas, int busquedas, List<Interprete> interpretes, Genero genero) {
+    public Cancion(String nombre, LocalDate localDate, int duracion, List<Interprete> interpretes, Genero genero) {
         this.nombre = nombre;
-        this.fechaCreacion = fechaCreacion;
+        this.fechaCreacion = localDate;
         this.duracion = duracion;
-        this.descargas = ventas;
-        this.busquedas = busquedas;
         this.interpretes = interpretes;
         this.genero = genero;
     }
-    public Cancion(String nombre,float duracion){
+    public Cancion(String nombre,int duracion){
         this.nombre=nombre;
         this.duracion=duracion;
     }
 
+    @Override
+    public String toString() {
+        return "Cancion{" +
+                "idCancion=" + idCancion +
+                ", nombre='" + nombre + '\'' +
+                ", fechaCreacion=" + fechaCreacion +
+                ", duracion=" + duracion +
+                ", busquedas=" + busquedas +
+                ", descargas=" + descargas +
+                ", genero=" + genero +
+                '}';
+    }
 }

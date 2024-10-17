@@ -1,0 +1,40 @@
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    border: 2px solid black;
+}
+
+.margenLaterales{
+    padding-right: 20px;
+    padding-left: 20px;
+    
+    
+}
+
+.radiobajas{
+    margin-top: 100px;
+}
+.radiomodificar{
+    margin-top: 100px;
+}
+.RellenandoDatos{
+    height:100%;
+    width: 67vh;   
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+.AltasBajasModificaciones{
+   
+    height:100%;
+    width: 15vh;   
+    display: flex;
+    flex-direction: column;
+    padding-left: 1%;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+
+}
+

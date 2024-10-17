@@ -1,0 +1,57 @@
+
+
+<div class="contenedor">
+    <!-- <button style="width: 15vh ;">Hola</button>
+    <button style="width: 68vh;">Adios</button> -->
+    <div class="AltasBajasModificaciones">
+        <div>
+          <input (click)="clickRadioAlta()" class="radioaltas" type="radio" name="consultas" checked> Altas
+        </div>
+       <div>
+        <input (click)="clickRadioBajas()" class="radiobajas" type="radio" name="consultas"> Bajas
+       </div> 
+       <div>
+        <input (click)="clickRadioModificiar()" class="radiomodificar" type="radio" name="consultas"> Modificar
+       </div>
+    </div>
+    
+    <div class="RellenandoDatos">
+        <h3 style=" padding-left: 40%;">CANCION</h3>
+    
+        <div>
+            <label class="margenLaterales" for="idCancion" >idCancion</label>
+            <input type="text" [(ngModel)]="cancion.idCancion" [disabled]="isdisableidCancion">
+        </div>
+        <div>
+            <label class="margenLaterales" for="nombre">Nombre</label>
+            <input type="text" [(ngModel)]="cancion.nombre" [disabled]="isdisablenombre">
+        </div>
+        <div>
+            <label class="margenLaterales" for="fechaCreacion">fechaCreacion</label>
+            <input type="date" [(ngModel)]="cancion.fechaCreacion" [disabled]="isdisablefechaCreacion">
+        </div>
+        <div>
+            <label class="margenLaterales" for="duracion">duracion</label>
+            <input type="number" [(ngModel)]="cancion.duracion"[disabled]="isdisableduracion">
+        </div>
+        <div>
+            <label class="margenLaterales" for="busquedas">busquedas</label>
+            <input type="number" value="0" disabled>
+        </div>
+        <div>
+            <label class="margenLaterales" for="descargas">descargas</label>
+            <input type="number" value="0" disabled>
+        </div>
+        
+    
+        
+        
+        
+        <div style="padding-left: 160px; padding-top: 20px;">
+            <button (click)="enviarCancion()">Enviar</button>
+        </div>
+    </div>
+</div>
+
+
+
