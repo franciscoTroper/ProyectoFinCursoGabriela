@@ -13,21 +13,16 @@ import { ComunicacionService } from '../_servicio/comunicacion.service';
 })
 export class CancionesComponent  {
   
-
-  
-
   canciones:Cancion[]=[];
   constructor(private cancionService:CancionService,private comunicacion:ComunicacionService){}
   
   ngOnInit(): void {
+    this.reobtenerCanciones()
     this.comunicacion.recargandoPagina$.subscribe(()=>{
       this.reobtenerCanciones()
-    })
-    this.reobtenerCanciones()
-       
+    }) 
   }
   reobtenerCanciones(){
     this.cancionService.ObtenerCanciones().subscribe(datastream=>{this.canciones=datastream})
   }
-
 }

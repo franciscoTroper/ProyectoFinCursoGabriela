@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { ComunicacionService } from '../_servicio/comunicacion.service';
@@ -25,35 +25,46 @@ export class CabeceroComponent {
   boolGenero:boolean=false;
   
   clickBusqueda(){
+    alert(this.textobusqueda )
     if(this.boolCancion){
+  
       this.ruter.navigate(['/cancionUnica',this.textobusqueda]);
       this.communicationService.triggerFunction();
+   
     }
-    if(this.boolInterprete){
+    else if(this.boolInterprete){
+      
       this.ruter.navigate(['/interpretes',this.textobusqueda]);
       this.communicationService.triggerFunction();
+      
     }
-    if(this.boolGenero){
+    else if(this.boolGenero){
+      
       this.ruter.navigate(['/generos',this.textobusqueda]);
       this.communicationService.triggerFunction();
+     
     }
+    
 }
 clickCancion(){
   this.boolCancion=true;
   this.boolInterprete=false;
   this.boolGenero=false;
+  
 
 }
 clickInterprete(){
   this.boolCancion=false;
   this.boolInterprete=true;
   this.boolGenero=false;
+  
 
 }
 clickGenero(){
   this.boolCancion=false;
   this.boolInterprete=false;
   this.boolGenero=true;
+  
 
 }
 

@@ -9,6 +9,7 @@ import { InterpretesComponent } from './interpretes/interpretes.component';
 import { GenerosComponent } from './generos/generos.component';
 import { MasNuevasComponent } from './masnuevas/masnuevas.component';
 import { CancionUnicaComponent } from './cancion-unica/cancion-unica.component';
+import { MasDescargadasComponent } from './mas-descargadas/mas-descargadas.component';
 
 
 
@@ -42,6 +43,9 @@ export const routes: Routes = [
     },
     {
         "path":'masnuevas', component:MasNuevasComponent
+    },
+    {
+        "path":'masdescargadas', component:MasDescargadasComponent
     },
     {
         "path": 'piePagina', component: PiePaginaComponent 

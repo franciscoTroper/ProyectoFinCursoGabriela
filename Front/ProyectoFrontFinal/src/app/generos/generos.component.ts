@@ -19,10 +19,11 @@ export class GenerosComponent implements OnInit{
   constructor(private cancionservicio:CancionService, private comunicacion:ComunicacionService){}
 
   ngOnInit(): void {
+    this.reobtenerCanciones();
     this.comunicacion.recargandoPagina$.subscribe(() => {
       this.reobtenerCanciones();
     });
-    this.reobtenerCanciones();
+    
   }
   reobtenerCanciones(){
     this.cancionservicio.ObtenerCancionesDesdeGenero(this.nombre).subscribe(datastream => {this.canciones=datastream})

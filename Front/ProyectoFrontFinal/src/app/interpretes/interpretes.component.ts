@@ -18,6 +18,7 @@ export class InterpretesComponent implements OnInit {
   constructor(private servicioInterprete:InterpreteService,private comunicacion:ComunicacionService){}
   
   ngOnInit(): void {
+    this.reobtenerLasCanciones();
     this.comunicacion.recargandoPagina$.subscribe(() => {
       this.reobtenerLasCanciones();
     });

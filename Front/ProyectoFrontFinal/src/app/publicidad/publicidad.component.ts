@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-publicidad',
@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 })
 
 export class PublicidadComponent {
+
+  constructor(private ruter:Router){}
   images: string[] = [
     '../../assets/_publicidades/concierto_pop.png',
     '../../assets/_publicidades/concierto_rock.webp',
@@ -26,6 +28,16 @@ export class PublicidadComponent {
 
   setCurrentSlide(index: number): void {
     this.currentSlide = index;
+  }
+  clicNovedades(){
+    this.ruter.navigate(['/masnuevas']);
+  }
+  clickMasDescargadas(){
+    this.ruter.navigate(['/masdescargadas']);
+
+  }
+  clickTodasLasCanciones(){
+    this.ruter.navigate(['/canciones']);
   }
 
 }

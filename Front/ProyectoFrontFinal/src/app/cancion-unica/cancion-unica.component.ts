@@ -21,13 +21,16 @@ cancion:Cancion[]=[];
   constructor(private servicioCancion:CancionService, private comunicacion:ComunicacionService){}
 
   ngOnInit(): void {
+    this.reobtenerCanciones();
     this.comunicacion.recargandoPagina$.subscribe(() => {
       this.reobtenerCanciones();
     });
+    
   }
   reobtenerCanciones(){
     
     this.servicioCancion.ObtenerUnaCancion(this.nombre).subscribe(datastream => {this.cancion = datastream;})
+    alert(this.nombre)
   }
 
 }
