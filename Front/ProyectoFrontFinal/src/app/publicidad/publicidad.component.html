@@ -12,3 +12,9 @@
 <div style="text-align:center">
     <span class="dot" *ngFor="let dot of images; let i = index" [class.active]="currentSlide === i" (click)="setCurrentSlide(i)"></span>
 </div>
+
+<div class="menu-horizontal" style="margin: top 50px;">
+    <button onclick="location.href='#novedades'">Novedades</button>
+    <button onclick="location.href='#descargadas'">Las Canciones +Descargadas</button>
+    <button onclick="location.href='#buscadas'">Las Canciones +Buscadas</button>
+</div>

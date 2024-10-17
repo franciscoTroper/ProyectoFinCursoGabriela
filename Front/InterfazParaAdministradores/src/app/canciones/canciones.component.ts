@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CancionService } from '../_servicio/cancion.service';
 import { Cancion } from '../_modelo/cancion';
 import { FormsModule } from '@angular/forms';
-import { Genero } from '../_modelo/genero';
+
 
 
 @Component({
@@ -21,27 +21,23 @@ export class CancionesComponent {
     duracion: 0,
     busquedas: 0,
     descargas: 0,
-    genero: {
-      idGenero: 0,
-      tipoGenero: ''
-    }
   };
 
   
-  constructor(private servicioCancion:CancionService){}
-  
+ 
+  constructor(private servicioCancion:CancionService){
+  }
+
   
   isdisableidCancion:boolean=true;
   isdisablenombre:boolean=false;
   isdisablefechaCreacion:boolean=false;
-  isdisableduracion:boolean=false
-
+  isdisableduracion:boolean=false;
+  isdisabletipoGenero:boolean=false;
   altasRadio:boolean=true
   bajasRadio:boolean=false;
   modificarRadio:boolean=false;
-
-  idCancionvalue:number=0;
-
+  
 
   clickRadioAlta(){
     this.isdisableidCancion=true;
@@ -62,7 +58,7 @@ export class CancionesComponent {
     this.modificarRadio=false;
   }
   clickRadioModificiar(){
-    this.isdisableidCancion=true;
+    this.isdisableidCancion=false;
     this.isdisablenombre=false;
     this.isdisableduracion=false;
     this.isdisablefechaCreacion=false;
@@ -71,7 +67,7 @@ export class CancionesComponent {
     this.modificarRadio=true;
   }
 
-  enviargenero(){
+  enviarCancion(){
     
     if (this.altasRadio) {
       this.servicioCancion.altaCancion(this.cancion).subscribe(datastream=>{this.cancion = datastream;});
@@ -80,7 +76,8 @@ export class CancionesComponent {
       this.servicioCancion.modificarCancion(this.cancion).subscribe(datastream=>{this.cancion = datastream;});
     }
     else if(this.bajasRadio){
-      this.servicioCancion.bajaCancion(this.idCancionvalue).subscribe(datastream=>{this.cancion = datastream;});
+      this.servicioCancion.bajaCancion(this.cancion.idCancion).subscribe(datastream=>{this.cancion = datastream;});
     }
   }
+  
 }

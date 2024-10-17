@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { InterpreteService } from '../_servicio/interprete.service';
 import { Interprete } from '../_modelo/interprete';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-interpretes',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './interpretes.component.html',
   styleUrl: './interpretes.component.css'
 })
 export class InterpretesComponent {
   
-  interprete: Interprete = new Interprete();
+  interprete: Interprete={
+         idInterprete: 0,
+         nombre: '',
+         fechaCreacion : new Date(),
+         paisOrigen: ''
+      
+  };
 
 
   
@@ -27,7 +34,7 @@ export class InterpretesComponent {
   modificarRadio:boolean=false;
 
   clickRadioAlta(){
-    this.isdisableidInterprete=false;
+    this.isdisableidInterprete=true;
     this.isdisablenombre=false;
     this.isdisablepais=false;
     this.isdisablefechaCreacion=false;

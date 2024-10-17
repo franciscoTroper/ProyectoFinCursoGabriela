@@ -1,42 +1,31 @@
 <header>
-    <div class="container">
-      <div class="logo">
-        <a href="/">Tienda de Discos</a>
-        <p>Aquí encontrarás una gran variedad de canciones para todos los gustos.</p>      
+  <div class="container">
+    <div class="logo">
+      <a href="/">Tienda de Discos</a>
     </div>
-      <nav>
-        <ul>
-          <li><a href="/">Inicio</a></li>
-          <li><a href="/contacto">Contacto</a></li>
-          <li class="search-bar">
-            <button (click)="clickBusqueda()"><i class="fas fa-search"></i></button>
-            <input type="text" [(ngModel)]="textobusqueda" placeholder="Buscar...">
-            <div className="radio">
-            <div className="radio">
-              <label>
-                <input (click)="clickCancion()" type="radio" name="optcion" checked />
-                Cancion
-              </label>
-              <div className="radio">
-                <label>
-                  <input (click)="clickInterprete()"  type="radio" name="optcion"  />
-                  Interpretes
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input (click)="clickGenero()" type="radio" name="optcion" />
-                  Generos
-                </label>
-              </div>
-            </div>
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <!--div class="cart">
-        <a href="/cart"><i class="fas fa-shopping-cart"></i> (0)</a>
-      </div>-->
-    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+        <li class="search-bar">
+          <button><i class="fas fa-search"></i></button>
+          <input type="text" placeholder="Buscar...">
+          <div class="radio">
+            <label>
+              <input type="radio" name="opcion" value="option1" checked />
+              Canciones
+            </label>
+            <label>
+              <input type="radio" name="opcion" value="option2" />
+              Interpretes
+            </label>
+            <label>
+              <input type="radio" name="opcion" value="option3" />
+              Generos
+            </label>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
-
