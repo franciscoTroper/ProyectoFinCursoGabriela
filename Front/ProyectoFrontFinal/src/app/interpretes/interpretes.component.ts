@@ -16,6 +16,7 @@ export class InterpretesComponent implements OnInit {
   canciones:Cancion[]=[];
   @Input() nombre:string='';
   constructor(private servicioInterprete:InterpreteService,private comunicacion:ComunicacionService){}
+  
   ngOnInit(): void {
     this.comunicacion.recargandoPagina$.subscribe(() => {
       this.reobtenerLasCanciones();

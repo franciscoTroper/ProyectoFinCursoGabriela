@@ -38,7 +38,7 @@ export const routes: Routes = [
         "path": 'generos/:nombre', component: GenerosComponent
     },
     {
-        "path": "cancionUnica/:nombreg", component:CancionUnicaComponent
+        "path": 'cancionUnica/:nombre', component:CancionUnicaComponent
     },
     {
         "path":'masnuevas', component:MasNuevasComponent

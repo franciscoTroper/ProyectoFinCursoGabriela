@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { CancionService } from '../_servicio/cancion.service';
 import { Cancion } from '../_modelo/cancion';
 import { ComunicacionService } from '../_servicio/comunicacion.service';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-cancion-unica',
@@ -12,20 +13,11 @@ import { ComunicacionService } from '../_servicio/comunicacion.service';
 })
 export class CancionUnicaComponent {
 
-@Input() nombreg:string='';
-cancion:Cancion= {
-  idCancion:0,
-  nombre:'',
-  duracion:0,      
-  fechaCreacion:new Date(),
-  busquedas:0,     
-  descargas:0,   
-  genero:{
-    idGenero:0,
-    tipoGenero:''
-  }   
 
-}
+@Input() nombre='';
+
+cancion:Cancion[]=[];
+
   constructor(private servicioCancion:CancionService, private comunicacion:ComunicacionService){}
 
   ngOnInit(): void {
@@ -34,7 +26,9 @@ cancion:Cancion= {
     });
   }
   reobtenerCanciones(){
-    this.servicioCancion.ObtenerUnaCancion(this.nombreg).subscribe(datastream => {this.cancion = datastream;})
+    
+    this.servicioCancion.ObtenerUnaCancion(this.nombre).subscribe(datastream => {this.cancion = datastream;})
   }
 
 }
+

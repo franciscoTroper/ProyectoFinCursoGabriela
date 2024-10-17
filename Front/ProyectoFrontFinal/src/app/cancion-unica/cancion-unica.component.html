@@ -1,25 +1,20 @@
-<h1>{{ this.nombreg }}</h1>
+<h1>Cancion</h1>
 <table>
-  <caption></caption>
-  <tr>
-    <th>idCancion</th>
-    <th>Nombre</th>
-    <th>Duracion</th>
-    <th>Fecha de creacion</th>
-    <th>Busquedas</th>
-    <th>Descargas</th>
-    <th>idGenero</th>
-    <th>Nombre genero</th>
-  </tr>
-  <tr>
-    <td>{{ this.cancion.idCancion }}</td>
-    <td>{{ this.cancion.nombre }}</td>
-    <td>{{ this.cancion.duracion }}</td>
-    <td>{{ this.cancion.fechaCreacion }}</td>
-    <td>{{ this.cancion.busquedas }}</td>
-    <td>{{ this.cancion.descargas }}</td>
-    <td>{{ this.cancion.genero.idGenero }}</td>
-    <td>{{ this.cancion.genero.tipoGenero }}</td>
-  </tr>
+    <caption>Lista de canciones</caption>
+    <tr>
+        <th>id</th>
+        <th>Nombre de cancion</th>
+        <th>Duracion</th>
+        <th>Fecha de creacion</th>
+    </tr>
+
+    @for(elemento of cancion; track elemento.idCancion) {
+        <tr>
+            <td>{{elemento.idCancion}}</td>
+            <td>{{elemento.nombre}}</td>
+            <td>{{elemento.duracion}}</td>
+            <td>{{elemento.fechaCreacion}}</td>
+        </tr>
+    }
 </table>
 
