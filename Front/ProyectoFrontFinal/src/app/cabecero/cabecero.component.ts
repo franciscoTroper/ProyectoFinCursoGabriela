@@ -60,4 +60,5 @@ clickGenero(){
   this.boolInterprete=false;
   this.boolGenero=true;
 }
+
 }

@@ -7,11 +7,12 @@
       <ul>
         <li><a href="/">Inicio</a></li>
         <li><a href="/inicio">Contacto</a></li>
-        <li class="search-bar">
-          <button (click)="clickBusqueda()"><i class="fas fa-search"></i></button>
-          <input type="text" [(ngModel)]="textobusqueda" placeholder="Buscar...">
-          <div className="radio">
-          <div class="radio">
+        <li class="search-container">
+          <div class="search-bar">
+            <input type="text" [(ngModel)]="textobusqueda" placeholder="Buscar...">
+            <button (click)="clickBusqueda()"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="radio-group">
             <label>
               <input (click)="clickCancion()" type="radio" name="opcion" value="option1" checked />
               Canciones
@@ -24,7 +25,6 @@
               <input (click)="clickGenero()" type="radio" name="opcion" value="option3" />
               Generos
             </label>
-            </div>
           </div>
         </li>
       </ul>
