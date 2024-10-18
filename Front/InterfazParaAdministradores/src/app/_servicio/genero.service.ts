@@ -19,4 +19,8 @@ export class GeneroService {
   modificarGenero(genero:Genero):Observable<Genero>{
     return this.http.put<Genero>(this.url,genero);
   }
+  getTodos():Observable<Genero[]>
+  {
+    return this.http.get<Genero[]>(this.url);
+  }
 }

@@ -1,5 +1,6 @@
 package com.corenetworks.proyectoFinCursoGabrielaBack.DTO;
 
+import com.corenetworks.proyectoFinCursoGabrielaBack.Modelo.Interprete;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -9,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import com.corenetworks.proyectoFinCursoGabrielaBack.Modelo.Genero;
 
@@ -39,14 +41,9 @@ public class DtoCancion {
 	private int descargas;
 	
 	// ésta sola, me muestra mucha información en el JSON...
-    private Genero genero;
-    
-    // ... y para evitar ese exceso de información,
-    // si sólo quiero mostrar del Genero el idGenero y el tipoGenero, y no todo...
-    // redefino un getter, que se antepone a Lombok    
-    public String getGenero() {
-		return "idGenero: " + genero.getIdGenero() + " " + genero.getTipoGenero();    	
-    }
-
+    //@NotNull
+	private Genero genero;
+	//@NotNull
+    private List<Interprete> interpretes;
 
 }

@@ -36,7 +36,7 @@ public class Cancion  {
     private int descargas;
 
 //    @ManyToMany(fetch = FetchType.EAGER)
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "cancion_interprete",
             joinColumns = @JoinColumn(name = "id_cancion",nullable = false),

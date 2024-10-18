@@ -42,11 +42,56 @@
             <label class="margenLaterales" for="descargas">descargas</label>
             <input type="number" value="0" disabled>
         </div>
-        
+
+
+
+          <div>
+            <label class="margenLaterales" for="genero">Género</label>
+            <select [(ngModel)]="cancion.genero" (ngModelChange)="actualizarGenero($event)">
+              <option *ngFor="let g of genero" [ngValue]="g">{{ g.tipoGenero }}</option>
+            </select>
+          </div>
+          <div>
+            <label class="margenLaterales" for="idGenero">idGenero</label>
+            <input type="number" [(ngModel)]="cancion.genero.idGenero" disabled>
+          </div>
+          <div>
+            <label class="margenLaterales" for="tipoGenero">tipoGenero</label>
+            <input type="text" [(ngModel)]="cancion.genero.tipoGenero" disabled>
+          </div>
+          
+
+
+
+         <!-- Iterar sobre intérpretes -->
     
-        
-        
-        
+         <div>
+            <label class="margenLaterales" for="interprete">Intérprete</label>
+            <select [(ngModel)]="cancion.interprete[0]" (ngModelChange)="actualizarInterprete($event)">
+              <option *ngFor="let i of interprete" [ngValue]="i">{{ i.nombre }}</option>
+              <option [ngValue]="nuevoInterprete">{{ nuevoInterprete.nombre }}</option>
+            </select>
+          </div>
+          
+          <div>
+            <label class="margenLaterales" for="idInterprete">idInterprete</label>
+            <input type="number" [(ngModel)]="cancion.interprete[0].idInterprete" [disabled]="!esNuevoInterprete">
+          </div>
+          <div>
+            <label class="margenLaterales" for="nombreInterprete">nombreInterprete</label>
+            <input type="text" [(ngModel)]="cancion.interprete[0].nombre" [disabled]="!esNuevoInterprete">
+          </div>
+          <div>
+            <label class="margenLaterales" for="fechaCreacionInterprete">fechaCreacionInterprete</label>
+            <input type="date" [(ngModel)]="cancion.interprete[0].fechaCreacion" [disabled]="!esNuevoInterprete">
+          </div>
+          <div>
+            <label class="margenLaterales" for="paisOrigen">paisOrigen</label>
+            <input type="text" [(ngModel)]="cancion.interprete[0].paisOrigen" [disabled]="!esNuevoInterprete">
+          </div>
+          
+    </div>
+    <div>  
         <div style="padding-left: 160px; padding-top: 20px;">
             <button (click)="enviarCancion()">Enviar</button>
         </div>

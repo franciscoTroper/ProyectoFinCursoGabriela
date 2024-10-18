@@ -8,7 +8,7 @@ export const appConfig: ApplicationConfig = {
               provideRouter(
                             routes,
                             withComponentInputBinding(),
-                            withDebugTracing()
+//                            withDebugTracing()
                           ),
               provideHttpClient(withFetch()) // no olvidar �ste para poder usar HttpClient
             ]

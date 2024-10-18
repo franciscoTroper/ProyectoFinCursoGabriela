@@ -18,4 +18,7 @@ export class InterpreteService {
   modificarInterprete(interpete:Interprete):Observable<Interprete>{
     return this.http.put<Interprete>(this.url,interpete);
   }
+  gettodos():Observable<Interprete[]>{
+    return this.http.get<Interprete[]>(this.url);
+  }
 }

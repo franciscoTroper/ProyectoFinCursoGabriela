@@ -9,4 +9,6 @@ export interface Cancion {
     duracion:      number;
     busquedas:     number;
     descargas:     number; 
+    genero:        Genero;
+    interprete:    Interprete[];
 }

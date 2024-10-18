@@ -13,8 +13,9 @@ import { delay } from 'rxjs';
 })
 export class CabeceroComponent{
   searchQuery: string = '';
-  constructor(private ruter:Router,private communicationService: ComunicacionService){}
-  
+  constructor(private ruter:Router,private communicationService: ComunicacionService){
+    }
+    
   
   
   onSearch() {
@@ -30,6 +31,8 @@ export class CabeceroComponent{
   clickBusqueda(){
     
     if(this.boolCancion){
+      //this.communicationService.recargandoPagina.next(true);  // para que los componentes recarguen sus datos
+      
       this.ruter.navigate(['/cancionUnica',this.textobusqueda]);
       this.communicationService.triggerFunction();
       
@@ -46,16 +49,19 @@ export class CabeceroComponent{
     }  
 }
 clickCancion(){
+  //this.textobusqueda='cancion';
   this.boolCancion=true;
   this.boolInterprete=false;
   this.boolGenero=false; 
 }
 clickInterprete(){
+  //this.textobusqueda='interprete';
   this.boolCancion=false;
   this.boolInterprete=true;
   this.boolGenero=false;
 }
 clickGenero(){
+  //this.textobusqueda='genero';
   this.boolCancion=false;
   this.boolInterprete=false;
   this.boolGenero=true;

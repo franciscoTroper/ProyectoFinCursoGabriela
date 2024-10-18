@@ -34,9 +34,84 @@ public class ProyectoFinCursoGabrielaBackApplication implements CommandLineRunne
 
 	@Autowired
 	private IServicioCancion servicioCancion;
+    public Genero registrarGenero(String nombreGenero){
+
+        Genero genero=new Genero(0,nombreGenero);
+        try {
+           return servicioGenero.registrar(genero);
+        } catch (Exception e) {
+            return null;
+
+        }
+
+    }
+
+    public Interprete registrarInterpretes(String nombre,String paisOrigen){
+        Interprete interprete = new Interprete(0,nombre,new Date(1970,5,25),paisOrigen);
+        try {
+           return servicioInterprete.registrar(interprete);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    public Cancion registrarcancion(String nombre,Genero genero,List<Interprete> interpretess)
+    {
+        Cancion cancion=new Cancion(nombre
+				, LocalDate.of( 1980 , 4 , 17 )
+				,120
+				,interpretess,genero);
+
+        try {
+            return servicioCancion.registrar(cancion);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 
 	@Override
 	public void run(String... args) throws Exception {
+       Genero g1= registrarGenero("rock");
+        Genero g2= registrarGenero("pop");
+        Genero g3= registrarGenero("clasico");
+        Genero g4= registrarGenero("regueton");
+        Genero g5= registrarGenero("folk");
+        Genero g6=  registrarGenero("jazz");
+        Genero g7=  registrarGenero("blues");
+        Genero g8= registrarGenero("soul");
+       Interprete i1= registrarInterpretes("Oasis","Inglaterra");
+        Interprete i2= registrarInterpretes("the beatles","Inglaterra");
+        Interprete i3= registrarInterpretes("los pecos","Inglaterra");
+        Interprete i4=  registrarInterpretes("malu","Inglaterra");
+        Interprete i5= registrarInterpretes("alejandro sanz","Inglaterra");
+        Interprete i6=  registrarInterpretes("david bisbal","Inglaterra");
+        Interprete i7=  registrarInterpretes("chenoa","Inglaterra");
+        Interprete i8=  registrarInterpretes("pablo albaran","Inglaterra");
+        List<Interprete>interpretes1=new ArrayList<>();
+        interpretes1.add(i1);
+        registrarcancion("cancion1",g1,interpretes1);
+        List<Interprete>interpretes2=new ArrayList<>();
+        interpretes1.add(i1);
+        registrarcancion("cancion2",g3,interpretes2);
+        List<Interprete>interpretes3=new ArrayList<>();
+        interpretes1.add(i1);
+        registrarcancion("cancion3",g4,interpretes3);
+        List<Interprete>interpretes4=new ArrayList<>();
+        interpretes1.add(i1);
+        registrarcancion("cancion4",g5,interpretes4);
+        List<Interprete>interpretes5=new ArrayList<>();
+        interpretes1.add(i1);
+        registrarcancion("cancion5",g6,interpretes5);
+        List<Interprete>interpretes6=new ArrayList<>();
+        interpretes1.add(i1);
+        registrarcancion("cancion6",g7,interpretes6);
+
+
+
+
+
+
+
+
 //		Genero rock=new Genero(0,"rock");
 //		servicioGenero.registrar(rock);
 //
