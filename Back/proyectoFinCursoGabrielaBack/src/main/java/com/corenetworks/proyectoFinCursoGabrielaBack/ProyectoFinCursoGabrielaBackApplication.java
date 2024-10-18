@@ -90,19 +90,19 @@ public class ProyectoFinCursoGabrielaBackApplication implements CommandLineRunne
         interpretes1.add(i1);
         registrarcancion("cancion1",g1,interpretes1);
         List<Interprete>interpretes2=new ArrayList<>();
-        interpretes1.add(i1);
+        interpretes1.add(i2);
         registrarcancion("cancion2",g3,interpretes2);
         List<Interprete>interpretes3=new ArrayList<>();
-        interpretes1.add(i1);
+        interpretes1.add(i3);
         registrarcancion("cancion3",g4,interpretes3);
         List<Interprete>interpretes4=new ArrayList<>();
-        interpretes1.add(i1);
+        interpretes1.add(i4);
         registrarcancion("cancion4",g5,interpretes4);
         List<Interprete>interpretes5=new ArrayList<>();
-        interpretes1.add(i1);
+        interpretes1.add(i4);
         registrarcancion("cancion5",g6,interpretes5);
         List<Interprete>interpretes6=new ArrayList<>();
-        interpretes1.add(i1);
+        interpretes1.add(i5);
         registrarcancion("cancion6",g7,interpretes6);
 
 
